@@ -1,0 +1,22 @@
+body{
+    margin: 25px;
+    background-image: linear-gradient(to right, #0088ff 0%, #00ff95d5 100%); 
+}
+.custom-margin{
+    margin-top: 25px;
+}
+li{
+    list-style: none;
+}
+.title{
+    color: #000000;
+}
+.timebackground{
+    background-color: #e2e2e2;
+    border-radius: 10px;
+}
+.inline{
+    justify-content: flex;
+    flex-wrap: wrap;
+    display: inline;
+}
