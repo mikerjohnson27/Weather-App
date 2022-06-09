@@ -3,3 +3,4 @@ A Weather Application to display the 5 day forecast using HTML, CSS, and JavaScr
 
 https://cssgradient.io/gradient-backgrounds/
 https://get.foundation/
+https://home.openweathermap.org/

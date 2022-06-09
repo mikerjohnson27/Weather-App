@@ -2,7 +2,7 @@ body{
     margin: 25px;
     background-image: linear-gradient(to right, #0088ff 0%, #00ff95d5 100%); 
 }
-.custom-margin{
+.custom-margin-top{
     margin-top: 25px;
 }
 li{
