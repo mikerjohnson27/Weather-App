@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-        <!-- Compressed CSS -->
+        <!-- Compressed CSS (Foundation by ZERB) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+        <!--Developer made CSS-->
     <link rel="stylesheet" href="../Weather-App/styles/styles.css">
 </head>
 <body>
 <div class="top-bar align-center">
     <ul class ="menu">
+            <!--Contact Information and Socials-->
         <li class="menu-text">Created by Mike R Johnson</li>
         <li><a href="https://mikerjohnson.com/" target="_blank" rel="noopener noreferrer" class="menu-text">View My Portfolio</a></li>
         <li></li><a href="https://github.com/mikerjohnson27" target="_blank" rel="noopener noreferrer" class="menu-text">View My GitHub</a></li>
@@ -20,22 +22,37 @@
     </ul>
 </div>
     <section class="grid-container custom-margin-top">
-        <div class="grid-x grid-margin-x">
-            <div class="cell small-10 align-middle custom-margin-top">
-                <input id="inputValue"class="small-up-8" type="text">
+        <div class="grid-x grid-margin-x align-center">
+            <div class="cell small-9 align-middle custom-margin-top">
+                <input id="inputValue" type="text">
             </div>
             <div class="cell small-2 align-middle custom-margin-top">
                 <button id="search" class="submit button">Search</button>
             </div>
+            <div class="cell small-1 align-middle custom-margin-top">
+                <div class="switch small">
+                    <input class="switch-input" id="yes-no" type="checkbox" name="exampleSwitch">
+                    <label class="switch-paddle" for="yes-no">
+                    <span class="switch-active" aria-hidden="true">°C</span>
+                    <span class="switch-inactive" aria-hidden="true">°F</span>
+                    </label>
+                </div>
+            </div>
         </div>
     </section>
 <div id="App">
+
+
+    <!-- Javascript will load the information here. -->
+
+
 </div>
     <footer>
 
     </footer>
-        <!-- Compressed JavaScript -->
+        <!-- Compressed JavaScript (Foundation by ZERB) -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+        <!--Developer made Javascript-->
     <script src="./styles/app.js"></script>
     <script type='text/javascript' src='config.js'></script>
 </body>

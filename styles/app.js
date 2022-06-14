@@ -1,40 +1,33 @@
+//
 const button = document.getElementById('search');
 // const metric = '&units=metric';
 // const imperial = '&units=imperial';
 // const ForC = metricorimperial;
+//
 const input = document.getElementById('inputValue');
 
+//
 const topCityEl = document.getElementById('App');
 
+//
 const URLs = "https://api.openweathermap.org/data/2.5/forecast?zip="
 const URL2 = ",US&cnt=1&appid="
 
-const APIKey = 
+//
+const APIKey = "e6eec167479d0b4471b3a49b163e721a"
 
+//
 button.addEventListener("click", fetchdata)
+
 function fetchdata() {
     let URL3 = URLs + input.value + URL2 + APIKey
     fetch(URL3)
     .then(response => response.json())
     .then(data => topCityEl.innerHTML = 
-        `
-    <section class="grid-container custom-margin-top">
+        `<section class="grid-container custom-margin-top">
         <div class="grid-x grid-margin-x">
             <div class="cell small-12 align-middle ">
                 <h2 class="title text-center">Weather for: ${data.city.name}</h2>
-            </div>
-            <div class="small-8 custom-margin-top">
-                <p class="left">Local Date: June 9, 2022</p>
-                <p class="left">Local Time: 12:35pm</p>
-            </div>
-            <div class="small-offset-3 custom-margin-top">
-                <div class="switch medium">
-                    <input class="switch-input" id="yes-no" type="checkbox" name="exampleSwitch">
-                    <label class="switch-paddle" for="yes-no">
-                    <span class="switch-active" aria-hidden="true">°F</span>
-                    <span class="switch-inactive" aria-hidden="true">°C</span>
-                    </label>
-                </div>
             </div>
         </div>
     </section>
