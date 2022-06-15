@@ -34,11 +34,13 @@ function fetchdata() {
     <section class="grid-container custom-margin-top">
         <div class="grid-x grid-margin-x align-middle">
             <img class="cell small-4 align-middle" src="../Weather-App/styles/img/5a29cbf3bba5a5.9531327415126886277686.png" alt="">
-            <h2 class="cell small-4 align-middle">85 °F</h2>
+            <div class="cell small-4 align-middle">
+            <h2>${data.list[0].main.temp} °F</h2>
+            <h2>${data.list[0].weather.description}</h2>
+            </div>
             <ul class="cell small-4 align-middle">
-                <li>Feels Like: 90 °F</li>
-                <li>Humidity: 25%</li>
-                <li>Chance of Precipitation: 10%</li>
+                <li>Feels Like: ${data.list[0].main.feels_like} °F</li>
+                <li>Humidity: ${data.list[0].main.humidity}%</li>
             </ul>
         </div>
     </section>
