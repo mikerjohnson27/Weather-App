@@ -17,9 +17,9 @@ const URL2 = ",US&cnt=1&appid="
 const APIKey = "e6eec167479d0b4471b3a49b163e721a"
 
 //
-button.addEventListener("click", fetchdata)
+button.addEventListener("click", fetchData)
 
-function fetchdata() {
+function fetchData() {
     let URL3 = URLs + input.value + URL2 + APIKey
     fetch(URL3)
     .then(response => response.json())
