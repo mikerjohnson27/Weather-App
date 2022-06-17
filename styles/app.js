@@ -1,20 +1,16 @@
-
 const button = document.getElementById('search');
 // const metric = '&units=metric';
 // const imperial = '&units=imperial';
 // const ForC = metricorimperial;
-//
 const input = document.getElementById('inputValue');
 
 const topCityEl = document.getElementById('App');
 
-const URLs = "api.openweathermap.org/data/2.5/forecast/daily?zip="
-const URL2 = ",US&cnt=36&appid="
+const URLs = "https://api.openweathermap.org/data/2.5/forecast?zip="
+const URL2 = ",US&cnt=6&appid="
 
-const WeatherAPIKey = require('../.env')
-const APIKey = WeatherAPIKey
+const APIKey = "efb65fc829688895a22f36115faae923"
 
-//
 button.addEventListener("click", fetchData)
 
 function fetchData() {
@@ -50,30 +46,30 @@ function fetchData() {
     <section class="grid-container">
         <div class="grid-x grid-margin-x custom-margin-top">
             <div class="cell small-4 timebackground">
-                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}.png" alt="">
-                <h4 class="cell small-4 text-center">${data.list[8].main.temp} °F/</h4>
+                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[1].weather[0].icon}.png" alt="">
+                <h4 class="cell small-4 text-center">${data.list[1].main.temp} °F/</h4>
                 <h6 class="cell small-4 text-center">Tomorrow</h6>
             </div>
             <div class="cell small-4 timebackground">
-                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}.png" alt="">
-                <h4 class="cell small-4 text-center">${data.list[16].main.temp} °F/</h4>
+                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[2].weather[0].icon}.png" alt="">
+                <h4 class="cell small-4 text-center">${data.list[2].main.temp} °F/</h4>
                 <h6 class="cell small-4 text-center">Saturday</h6>
             </div>
             <div class="cell small-4 timebackground">
-                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}.png" alt="">
-                <h4 class="cell small-4 text-center">${data.list[24].main.temp} °F/</h4>
+                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[3].weather[0].icon}.png" alt="">
+                <h4 class="cell small-4 text-center">${data.list[3].main.temp} °F/</h4>
                 <h6 class="cell small-4 text-center">Sunday</h6>
             </div>
         </div>
         <div class="grid-x grid-margin-x custom-margin-top align-center">
             <div class="cell small-4 timebackground">
-                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}.png" alt="">
-                <h4 class="cell small-4 text-center">${data.list[32].main.temp} °F/</h4>
+                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[4].weather[0].icon}.png" alt="">
+                <h4 class="cell small-4 text-center">${data.list[4].main.temp} °F/</h4>
                 <h6 class="cell small-4 text-center">Monday</h6>
             </div>
             <div class="cell small-4 timebackground">
-                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[40].weather[0].icon}.png" alt="">
-                <h4 class="cell small-4 text-center">${data.list[40].main.temp} °F/</h4>
+                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[5].weather[0].icon}.png" alt="">
+                <h4 class="cell small-4 text-center">${data.list[5].main.temp} °F/</h4>
                 <h6 class="cell small-4 text-center">Tuesday</h6>
             </div>
         </div>
