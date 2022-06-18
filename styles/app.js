@@ -1,20 +1,23 @@
 const button = document.getElementById('search');
-// const metric = '&units=metric';
-// const imperial = '&units=imperial';
-// const ForC = metricorimperial;
+const imperial = '&units=imperial';
 const input = document.getElementById('inputValue');
 
 const topCityEl = document.getElementById('App');
 
-const URLs = "https://api.openweathermap.org/data/2.5/forecast?zip="
+const URLs = "api.openweathermap.org/data/2.5/forecast?q="
 const URL2 = ",US&cnt=6&appid="
 
 const APIKey = "efb65fc829688895a22f36115faae923"
 
-button.addEventListener("click", fetchData)
+//Event Listeners one for the search button and one for the input to display the local storage that was saved.
+button.addEventListener("click", fetchData, createItem)
+input.addEventListener("click", getValue)
+
+
+let retrievedObject = localStorage.getItem(JSON.stringify(input.value));
 
 function fetchData() {
-    let URL3 = URLs + input.value + URL2 + APIKey
+    let URL3 = URLs + input.value + URL2 + APIKey + imperial
     fetch(URL3)
     .then(response => response.json())
     .then(data => topCityEl.innerHTML = 
@@ -75,3 +78,17 @@ function fetchData() {
         </div>
     </section>`)
 };
+
+let localStorageObject = {};
+
+localStorage.setItem('localStorageObject', JSON.stringify(input.value));
+
+console.log('retrievedObject: ', JSON.parse(retrievedObject));
+
+function createItem() {
+	localStorage.setItem('nameOfCity', input.value); 
+}
+
+function getValue() {
+	return localStorage.getItem('nameOfCity');  
+}
