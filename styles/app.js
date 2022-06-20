@@ -1,18 +1,18 @@
 const button = document.getElementById('search');
 const imperial = '&units=imperial';
-const input = document.getElementById('inputValue');
+let input = document.getElementById('inputValue');
 
 const topCityEl = document.getElementById('App');
 
-const URLs = "api.openweathermap.org/data/2.5/forecast?q="
-const URL2 = ",US&cnt=6&appid="
-
+const URLs = "https://api.openweathermap.org/data/2.5/forecast?q="
+const URL2 = ",us&appid="
 const APIKey = "efb65fc829688895a22f36115faae923"
 
+// const history = getElementById('history')
 //Event Listeners one for the search button and one for the input to display the local storage that was saved.
-button.addEventListener("click", fetchData, createItem)
-input.addEventListener("click", getValue)
-
+button.addEventListener("click", fetchData)
+button.addEventListener("click", getValue)
+// history.addEventListener("click", viewValue)
 
 let retrievedObject = localStorage.getItem(JSON.stringify(input.value));
 
@@ -25,6 +25,7 @@ function fetchData() {
         <div class="grid-x grid-margin-x">
             <div class="cell small-12 align-middle ">
                 <h2 class="title text-center">Weather for: ${data.city.name}</h2>
+                <h4 class="text-center"> Local Date: ${}</h4>
             </div>
         </div>
     </section>
@@ -49,46 +50,41 @@ function fetchData() {
     <section class="grid-container">
         <div class="grid-x grid-margin-x custom-margin-top">
             <div class="cell small-4 timebackground">
-                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[1].weather[0].icon}.png" alt="">
-                <h4 class="cell small-4 text-center">${data.list[1].main.temp} °F/</h4>
+                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}.png" alt="">
+                <h4 class="cell small-4 text-center">${data.list[8].main.temp} °F/</h4>
                 <h6 class="cell small-4 text-center">Tomorrow</h6>
             </div>
             <div class="cell small-4 timebackground">
-                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[2].weather[0].icon}.png" alt="">
-                <h4 class="cell small-4 text-center">${data.list[2].main.temp} °F/</h4>
+                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}.png" alt="">
+                <h4 class="cell small-4 text-center">${data.list[16].main.temp} °F/</h4>
                 <h6 class="cell small-4 text-center">Saturday</h6>
             </div>
             <div class="cell small-4 timebackground">
-                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[3].weather[0].icon}.png" alt="">
-                <h4 class="cell small-4 text-center">${data.list[3].main.temp} °F/</h4>
+                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}.png" alt="">
+                <h4 class="cell small-4 text-center">${data.list[24].main.temp} °F/</h4>
+                
                 <h6 class="cell small-4 text-center">Sunday</h6>
             </div>
         </div>
         <div class="grid-x grid-margin-x custom-margin-top align-center">
             <div class="cell small-4 timebackground">
-                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[4].weather[0].icon}.png" alt="">
-                <h4 class="cell small-4 text-center">${data.list[4].main.temp} °F/</h4>
+                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}.png" alt="">
+                <h4 class="cell small-4 text-center">${data.list[32].main.temp} °F/</h4>
                 <h6 class="cell small-4 text-center">Monday</h6>
             </div>
             <div class="cell small-4 timebackground">
-                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[5].weather[0].icon}.png" alt="">
-                <h4 class="cell small-4 text-center">${data.list[5].main.temp} °F/</h4>
+                <img class="cell small-4" src="http://openweathermap.org/img/wn/${data.list[39].weather[0].icon}.png" alt="">
+                <h4 class="cell small-4 text-center">${data.list[39].main.temp} °F/</h4>
                 <h6 class="cell small-4 text-center">Tuesday</h6>
             </div>
         </div>
     </section>`)
 };
 
-let localStorageObject = {};
-
-localStorage.setItem('localStorageObject', JSON.stringify(input.value));
-
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
-
-function createItem() {
-	localStorage.setItem('nameOfCity', input.value); 
-}
+let cityArray = []
 
 function getValue() {
-	return localStorage.getItem('nameOfCity');  
+    let new_city =  input.value
+    cityArray.push(new_city)
+    localStorage.setItem("city", JSON.stringify(cityArray))
 }
