@@ -26,3 +26,9 @@ https://materialdesignicons.com/
 Repo Link: https://github.com/mikerjohnson27/Weather-App
 
 Live App: https://mikerjohnson27.github.io/Weather-App/
+
+
+# Screenshots
+![image](https://user-images.githubusercontent.com/101275747/175359555-9e68acdf-4d88-436e-8b74-a3d3394cf5e0.png)
+![image](https://user-images.githubusercontent.com/101275747/175359632-4ba57228-1635-43af-bdb5-ad4cc44af045.png)
+
