@@ -1,11 +1,10 @@
+//Connections to the HTML file.
 const button = document.getElementById('search');
-
-let input = document.getElementById('inputValue').value
-
+let input = document.getElementById('inputValue').value;
 const topCityEl = document.getElementById('App');
-
 const history = document.getElementById('history');
 
+//API Link (No Touchy)
 const URLs = "https://api.openweathermap.org/data/2.5/forecast?q="
 const URL2 = ",us&appid="
 const APIKey = "efb65fc829688895a22f36115faae923"
@@ -15,6 +14,7 @@ const imperial = '&units=imperial';
 button.addEventListener("click", fetchData)
 button.addEventListener("click", getValue)
 
+//Generates the input value to display the weather.
 function fetchData(input) {
     let URL3 = URLs + input + URL2 + APIKey + imperial
     fetch(URL3)
@@ -94,8 +94,10 @@ function fetchData(input) {
     </section>`)
 };
 
+//Empty City Array for local storage.
 let cityArray = []
 
+//This is used to generate the input and save to local storage.
 function getValue() {
     let input = document.getElementById('inputValue')
     localStorage.setItem("city", JSON.stringify(input.value))
@@ -104,10 +106,13 @@ function getValue() {
 
 let cityParsed = JSON.parse(localStorage.getItem("city"))
 
+//This is used to add the local storage items to the display.
 function cityDisplay() {
     if(localStorage.getItem("city") != null)
         history.innerHTML = `<h5 class="text-center" onclick='pushValue()'> ${cityParsed}</h5>`
 }
+
+//This function is used when someone picks an Item is picked from local storage.
 function pushValue(){
     let input = cityParsed
     fetchData(input)
